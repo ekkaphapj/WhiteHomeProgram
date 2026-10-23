@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Noto Sans Thai', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --color-brand-50: #fbf5ec;
+  --color-brand-100: #f5e6d2;
+  --color-brand-200: #e9cba1;
+  --color-brand-300: #dcab6f;
+  --color-brand-400: #d2954e;
+  --color-brand-500: #c8823c;
+  --color-brand-600: #b06a2e;
+  --color-brand-700: #8c5226;
+  --color-brand-800: #6f4122;
+  --color-brand-900: #452816;
+  --color-ink-500: #6b6b69;
+  --color-ink-700: #4a4a49;
+  --color-ink-800: #3d3d3c;
+  --color-ink-900: #262625;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-neutral-100 font-sans text-ink-800 antialiased;
+  }
+  input[type='date'],
+  input[type='month'] {
+    min-height: 3rem;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl bg-white shadow-sm;
+  }
+  .input {
+    @apply w-full rounded-xl border border-neutral-300 bg-white px-3.5 py-3 text-base text-ink-900 outline-none transition placeholder:text-neutral-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 disabled:bg-neutral-100;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-ink-700;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-4 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-brand-600 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-neutral-300 bg-white px-4 py-3 text-base font-semibold text-ink-800 transition hover:bg-neutral-50 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-base font-semibold text-ink-700 transition hover:bg-neutral-100 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50;
+  }
+  .chip {
+    @apply inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-semibold;
+  }
+  .fab {
+    @apply fixed right-4 bottom-24 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-brand-500 text-white shadow-lg transition active:scale-95;
+  }
+}
+
+/* พิมพ์ใบวางบิล: ซ่อนทุกอย่างยกเว้นแผ่นใบวางบิล */
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  .invoice-sheet,
+  .invoice-sheet * {
+    visibility: visible !important;
+  }
+  .invoice-sheet {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    box-shadow: none !important;
+  }
+}

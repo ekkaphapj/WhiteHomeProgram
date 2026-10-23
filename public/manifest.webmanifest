@@ -1,0 +1,16 @@
+{
+  "name": "The White Home — ระบบบริหารที่พัก",
+  "short_name": "White Home",
+  "description": "บันทึกเข้าพักรายวัน รายเดือน รายรับรายจ่าย และรายงาน ของ The White Home Udon Thani",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

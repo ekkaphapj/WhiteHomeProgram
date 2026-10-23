@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "thewhitehome",
+  "main": "src/server/index.ts",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "not_found_handling": "single-page-application"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "whitehome-db",
+      "database_id": "54f2a389-4766-431c-9f21-4ce0e1bc3e7a"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}
